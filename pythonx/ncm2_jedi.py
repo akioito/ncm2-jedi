@@ -82,6 +82,9 @@ class Source(Ncm2Source):
                 # refresh=True
                 # call signature popup doesn't need to be cached by the
                 # framework
+                x = matches[0]
+                x['abbr'] = x['abbr'].replace('param ', '')
+                matches[0] = x
                 self.complete(ctx, ccol, matches, 1)
             return
 
